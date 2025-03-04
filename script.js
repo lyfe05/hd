@@ -33,6 +33,16 @@ function downloadVideo(quality = 'HD') {
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('btnDownloadHD').addEventListener('click', () => downloadVideo('HD'));
     document.getElementById('btnDownloadSD').addEventListener('click', () => downloadVideo('SD'));
+
     // Auto-trigger HD download when URL is entered
     document.getElementById('videoUrl').addEventListener('input', () => downloadVideo('HD'));
+
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        toggleBtn.innerHTML = document.body.classList.contains('dark-mode') 
+            ? '<i class="fas fa-sun"></i> Light Mode' 
+            : '<i class="fas fa-moon"></i> Dark Mode';
+    });
 });
