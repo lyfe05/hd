@@ -1,23 +1,42 @@
 /* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Theme Variables */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #000;
+    --container-bg: #fff;
+    --button-bg: #28a745;
+    --button-hover-bg: #218838;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --container-bg: #1e1e1e;
+    --button-bg: #4caf50;
+    --button-hover-bg: #388e3c;
 }
 
 /* Container Styles */
 .container {
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    background: var(--container-bg);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    color: #fff;
-    transition: transform 0.3s ease;
+    transition: background 0.3s, transform 0.3s ease;
 }
 
 .container:hover {
@@ -40,6 +59,9 @@ input[type="text"] {
     outline: none;
     font-size: 16px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Button Styles */
@@ -48,14 +70,14 @@ button {
     margin: 10px 5px;
     border: none;
     border-radius: 5px;
-    background-color: #28a745;
+    background-color: var(--button-bg);
     color: white;
     cursor: pointer;
     font-size: 16px;
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s, transform 0.3s ease;
 }
 
 button i {
@@ -63,7 +85,7 @@ button i {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: var(--button-hover-bg);
     transform: translateY(-5px);
 }
 
@@ -72,5 +94,22 @@ button:hover {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
-    color: #fff;
+}
+
+/* Dark Mode Toggle Button */
+.toggle-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin-top: 20px;
+}
+
+.toggle-btn:hover {
+    background-color: var(--button-bg);
+    color: white;
+    border-color: var(--button-bg);
 }
