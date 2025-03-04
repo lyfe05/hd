@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FB Video Downloader</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <h1>FB Video Downloader</h1>
-        <input type="text" id="videoUrl" placeholder="Enter Facebook video URL">
-        <button id="btnDownloadHD">Download HD</button>
-        <button id="btnDownloadSD">Download SD</button>
+        <div class="input-group">
+            <input type="text" id="videoUrl" placeholder="Enter Facebook video URL">
+            <button id="btnDownloadHD"><i class="fas fa-download"></i> Download HD</button>
+            <button id="btnDownloadSD"><i class="fas fa-download"></i> Download SD</button>
+        </div>
         <p id="downloadLink"></p>
     </div>
     <script src="script.js"></script>
