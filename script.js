@@ -56,11 +56,4 @@ function sendGptQuery() {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('btnDownloadHD').addEventListener('click', () => downloadVideo('HD'));
-    document.getElementById('btnDownloadSD').addEventListener('click', () => downloadVideo('SD'));
-
-    // Auto-trigger HD download when URL is entered
-    document.getElementById('videoUrl').addEventListener('input', () => downloadVideo('HD'));
-
-    // GPT Chat
-    document.getElementById('btnSendGpt').addEventListener('click', sendG
+    document.getElementById('btnDownloadHD').addEventListener('click', () => downloadVideo
