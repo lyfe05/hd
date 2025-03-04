@@ -10,7 +10,16 @@ function downloadVideo(quality = 'HD') {
                 const hdUrl = data.urls["0"].hd;
                 const sdUrl = data.urls["1"].sd;
                 const downloadUrl = isHD ? hdUrl : sdUrl;
-                document.getElementById('downloadLink').innerText = `Download Link (${quality}): ${downloadUrl}`;
+
+                // Create a temporary anchor element to initiate the download
+                const a = document.createElement('a');
+                a.href = downloadUrl;
+                a.download = `FBVideo_${quality}.mp4`; // Setting the desired file name
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+
+                document.getElementById('downloadLink').innerText = `Downloading (${quality})...`;
             } else {
                 document.getElementById('downloadLink').innerText = 'Failed to download video. Please try again.';
             }
