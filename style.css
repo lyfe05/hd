@@ -43,6 +43,31 @@ body.dark-mode {
     transform: translateY(-10px);
 }
 
+/* Menu Styles */
+.menu {
+    margin-bottom: 20px;
+}
+
+.menu-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.menu-btn:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-5px);
+}
+
 /* Input Group Styles */
 .input-group {
     display: flex;
@@ -90,7 +115,7 @@ button:hover {
 }
 
 /* Download Link Styles */
-#downloadLink {
+#downloadLink, #gptResponse {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
