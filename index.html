@@ -3,19 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FB Video Downloader</title>
+    <title>Multi-Function Tool</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>FB Video Downloader</h1>
-        <div class="input-group">
-            <input type="text" id="videoUrl" placeholder="Enter Facebook video URL">
-            <button id="btnDownloadHD"><i class="fas fa-download"></i> Download HD</button>
-            <button id="btnDownloadSD"><i class="fas fa-download"></i> Download SD</button>
+        <h1>Multi-Function Tool</h1>
+        <div class="menu">
+            <button class="menu-btn" onclick="showFunction('fbDownloader')"><i class="fas fa-video"></i> FB Downloader</button>
+            <button class="menu-btn" onclick="showFunction('gptChat')"><i class="fas fa-comments"></i> GPT Chat</button>
         </div>
-        <p id="downloadLink"></p>
+        <div id="fbDownloader" class="function-container">
+            <h2>FB Video Downloader</h2>
+            <div class="input-group">
+                <input type="text" id="videoUrl" placeholder="Enter Facebook video URL">
+                <button id="btnDownloadHD"><i class="fas fa-download"></i> Download HD</button>
+                <button id="btnDownloadSD"><i class="fas fa-download"></i> Download SD</button>
+            </div>
+            <p id="downloadLink"></p>
+        </div>
+        <div id="gptChat" class="function-container" style="display: none;">
+            <h2>GPT Chat</h2>
+            <div class="input-group">
+                <input type="text" id="gptInput" placeholder="Enter your query">
+                <button id="btnSendGpt"><i class="fas fa-paper-plane"></i> Send</button>
+            </div>
+            <p id="gptResponse"></p>
+        </div>
         <button id="darkModeToggle" class="toggle-btn"><i class="fas fa-moon"></i> Dark Mode</button>
     </div>
     <script src="script.js"></script>
