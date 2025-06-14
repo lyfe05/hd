@@ -8,15 +8,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    transition: background-color 0.3s ease-in-out;
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in forwards;
-}
-
-/* New Fade-In Animation */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Theme Variables */
@@ -40,107 +32,68 @@ body.dark-mode {
 /* Container Styles */
 .container {
     background: var(--container-bg);
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 90%;
-    max-width: 400px;
-    animation: slideUp 0.5s ease-out;
+    transition: background 0.3s, transform 0.3s ease;
 }
 
-/* New Slide-Up Animation */
-@keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+.container:hover {
+    transform: translateY(-10px);
 }
 
 /* Input Group Styles */
 .input-group {
-    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
+    width: 70%;
+    padding: 12px;
+    margin: 10px 0;
     border-radius: 5px;
     border: none;
     outline: none;
-    font-size: 14px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     background-color: var(--container-bg);
     color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
-
-input[type="text"]:focus {
-    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
-    animation: bounce 0.3s ease;
-}
-
-/* New Bounce Animation */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-5px); }
-    60% { transform: translateY(-3px); }
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Button Styles */
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
 button {
-    padding: 10px 15px;
-    margin: 5px 0;
+    padding: 12px 20px;
+    margin: 10px 5px;
     border: none;
     border-radius: 5px;
     background-color: var(--button-bg);
     color: white;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
     align-items: center;
-    gap: 5px;
-    width: 45%;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+    transition: background-color 0.3s, transform 0.3s ease;
 }
 
 button i {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 button:hover {
     background-color: var(--button-hover-bg);
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 /* Download Link Styles */
 #downloadLink {
-    margin-top: 15px;
-    font-size: 16px;
+    margin-top: 20px;
+    font-size: 18px;
     font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-#downloadLink.show {
-    opacity: 1;
-    animation: fadeInOut 2s ease-in-out;
-}
-
-/* New Fade-In-Out Animation */
-@keyframes fadeInOut {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; }
 }
 
 /* Dark Mode Toggle Button */
@@ -148,25 +101,15 @@ button:hover {
     background-color: transparent;
     color: var(--text-color);
     border: 1px solid var(--text-color);
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
-    margin-top: 15px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin-top: 20px;
 }
 
 .toggle-btn:hover {
     background-color: var(--button-bg);
     color: white;
     border-color: var(--button-bg);
-    transform: rotate(360deg);
-}
-
-/* Ensure Font Awesome is included if using icons */
-@media (prefers-reduced-motion: reduce) {
-    *, *:before, *:after {
-        animation: none !important;
-        transition: none !important;
-    }
 }
