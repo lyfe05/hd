@@ -107,15 +107,10 @@ button {
     display: flex;
     align-items: center;
     gap: 5px;
-    flex: 1 1 30%; /* Evenly distribute space for three buttons */
-    min-width: 100px; /* Minimum width for readability */
+    flex: 1 1 30%; /* Changed from width: 45% to distribute evenly for 3 buttons */
+    min-width: 100px; /* Ensure readability */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-button:active {
-    transform: scale(0.98); /* Subtle press effect */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 button i {
@@ -160,7 +155,7 @@ button:hover {
     cursor: pointer;
     font-size: 14px;
     margin-top: 15px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, background-color 0.5s ease; /* Smoother dark mode transition */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .toggle-btn:hover {
@@ -180,13 +175,9 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 400px) {
-    .container {
-        padding: 15px;
-    }
     button {
         flex: 1 1 100%; /* Stack buttons on mobile */
         width: 100%;
-        margin-bottom: 10px;
     }
     .button-group {
         flex-direction: column;
