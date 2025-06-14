@@ -92,7 +92,6 @@ input[type="text"]:focus {
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top: 15px;
 }
 
 button {
@@ -107,8 +106,7 @@ button {
     display: flex;
     align-items: center;
     gap: 5px;
-    flex: 1 1 30%; /* Changed from width: 45% to distribute evenly for 3 buttons */
-    min-width: 100px; /* Ensure readability */
+    width: 45%;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -170,17 +168,5 @@ button:hover {
     *, *:before, *:after {
         animation: none !important;
         transition: none !important;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 400px) {
-    button {
-        flex: 1 1 100%; /* Stack buttons on mobile */
-        width: 100%;
-    }
-    .button-group {
-        flex-direction: column;
-        align-items: stretch;
     }
 }
